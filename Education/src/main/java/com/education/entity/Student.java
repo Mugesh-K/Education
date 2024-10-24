@@ -11,8 +11,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Instructor", schema = "public")
-public class Instructor {
+@Table(name = "Student", schema = "public")
+public class Student {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)/**SEQUENCE, generator = "user_seq")
@@ -20,14 +20,11 @@ public class Instructor {
 	@Column(name = "id", nullable = false)
 	private Long id;
 
-	@Column(name = "instructorBio")
-	private String instructorBio;
+	@Column(name = "studentBio")
+	private String studentBio;
 	
 	@Column(name = "qualification")
 	private String qualification;
-
-    @Column(name = "numberOfCourses")
-	private Integer numberOfCourses;
 
 	@Column(name = "activeStatus")
 	private Boolean activeStatus;
@@ -45,12 +42,12 @@ public class Instructor {
 		this.id = id;
 	}
 
-	public String getInstructorBio() {
-		return instructorBio;
+	public String getStudentBio() {
+		return studentBio;
 	}
 
-	public void setInstructorBio(String instructorBio) {
-		this.instructorBio = instructorBio;
+	public void setStudentBio(String studentBio) {
+		this.studentBio = studentBio;
 	}
 
 	public String getQualification() {
@@ -59,14 +56,6 @@ public class Instructor {
 
 	public void setQualification(String qualification) {
 		this.qualification = qualification;
-	}
-
-	public Integer getNumberOfCourses() {
-		return numberOfCourses;
-	}
-
-	public void setNumberOfCourses(Integer numberOfCourses) {
-		this.numberOfCourses = numberOfCourses;
 	}
 
 	public Boolean getActiveStatus() {
@@ -88,24 +77,22 @@ public class Instructor {
 	
 	@Override
 	public String toString() {
-		return "Instructor [id=" + id + ", instructorBio=" + instructorBio + ", qualification=" + qualification
-				+ ", numberOfCourses=" + numberOfCourses + ", activeStatus=" + activeStatus + ", user=" + user + "]";
+		return "Student [id=" + id + ", studentBio=" + studentBio + ", qualification=" + qualification
+				+ ", activeStatus=" + activeStatus + ", user=" + user + "]";
 	}
 
 	
-	public Instructor(Long id, String instructorBio, String qualification, Integer numberOfCourses,
-			Boolean activeStatus, User user) {
+	public Student(Long id, String studentBio, String qualification, Boolean activeStatus, User user) {
 		super();
 		this.id = id;
-		this.instructorBio = instructorBio;
+		this.studentBio = studentBio;
 		this.qualification = qualification;
-		this.numberOfCourses = numberOfCourses;
 		this.activeStatus = activeStatus;
 		this.user = user;
 	}
 
 	
-	public Instructor() {
+	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

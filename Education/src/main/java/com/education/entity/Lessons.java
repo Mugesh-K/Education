@@ -25,6 +25,9 @@ public class Lessons {
 	
 	@Column(name = "duration")
 	private String duration;
+	
+	@Column(name = "videoUrl")
+	private String videoUrl;
 
 	@Column(name = "isPreview")
 	private Boolean isPreview;
@@ -62,6 +65,14 @@ public class Lessons {
 		this.duration = duration;
 	}
 
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+	}
+
 	public Boolean getIsPreview() {
 		return isPreview;
 	}
@@ -89,16 +100,18 @@ public class Lessons {
 	
 	@Override
 	public String toString() {
-		return "Lessons [id=" + id + ", title=" + title + ", duration=" + duration + ", isPreview=" + isPreview
-				+ ", course=" + course + ", module=" + module + "]";
+		return "Lessons [id=" + id + ", title=" + title + ", duration=" + duration + ", videoUrl=" + videoUrl
+				+ ", isPreview=" + isPreview + ", course=" + course + ", module=" + module + "]";
 	}
 
 	
-	public Lessons(Long id, String title, String duration, Boolean isPreview, Course course, Modules module) {
+	public Lessons(Long id, String title, String duration, String videoUrl, Boolean isPreview, Course course,
+			Modules module) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.duration = duration;
+		this.videoUrl = videoUrl;
 		this.isPreview = isPreview;
 		this.course = course;
 		this.module = module;

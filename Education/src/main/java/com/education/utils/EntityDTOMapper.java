@@ -5,9 +5,11 @@ import org.springframework.stereotype.Component;
 
 import com.education.dto.BlogDTO;
 import com.education.dto.InstructorDTO;
+import com.education.dto.StudentDTO;
 import com.education.dto.UserDTO;
 import com.education.entity.Blog;
 import com.education.entity.Instructor;
+import com.education.entity.Student;
 import com.education.entity.User;
 
 @Component
@@ -37,6 +39,14 @@ public class EntityDTOMapper {
 
 	public Instructor toEntity(InstructorDTO instructorDTO) {
 		return modelMapper.map(instructorDTO, Instructor.class);
+	}
+	
+	public StudentDTO toDTO(Student student) {
+		return modelMapper.map(student, StudentDTO.class);
+	}
+
+	public Student toEntity(StudentDTO studentDTO) {
+		return modelMapper.map(studentDTO, Student.class);
 	}
 	
 }

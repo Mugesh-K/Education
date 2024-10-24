@@ -35,6 +35,9 @@ public class Course {
 	@Column(name = "duration")
 	private String duration;
 
+	@Column(name = "isPaid")
+	private Boolean isPaid;
+
 	@Column(name = "price")
 	private Integer price;
 	
@@ -89,6 +92,14 @@ public class Course {
 		this.duration = duration;
 	}
 
+	public Boolean getIsPaid() {
+		return isPaid;
+	}
+
+	public void setIsPaid(Boolean isPaid) {
+		this.isPaid = isPaid;
+	}
+
 	public Integer getPrice() {
 		return price;
 	}
@@ -125,26 +136,27 @@ public class Course {
 	@Override
 	public String toString() {
 		return "Course [id=" + id + ", title=" + title + ", shortDescription=" + shortDescription + ", description="
-				+ description + ", duration=" + duration + ", price=" + price + ", courseLevel=" + courseLevel
-				+ ", language=" + language + ", thumbnailImgUrl=" + thumbnailImgUrl + "]";
+				+ description + ", duration=" + duration + ", isPaid=" + isPaid + ", price=" + price + ", courseLevel="
+				+ courseLevel + ", language=" + language + ", thumbnailImgUrl=" + thumbnailImgUrl + "]";
 	}
 
 	
-	public Course(Long id, String title, String shortDescription, String description, String duration, Integer price,
-			CourseLevel courseLevel, String language, String thumbnailImgUrl) {
+	public Course(Long id, String title, String shortDescription, String description, String duration, Boolean isPaid,
+			Integer price, CourseLevel courseLevel, String language, String thumbnailImgUrl) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.shortDescription = shortDescription;
 		this.description = description;
 		this.duration = duration;
+		this.isPaid = isPaid;
 		this.price = price;
 		this.courseLevel = courseLevel;
 		this.language = language;
 		this.thumbnailImgUrl = thumbnailImgUrl;
 	}
-
 	
+
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub

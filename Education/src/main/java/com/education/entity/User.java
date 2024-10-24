@@ -2,6 +2,8 @@ package com.education.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -47,6 +49,7 @@ public class User {
 
     @ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "roleId", referencedColumnName = "id")
+    @JsonIgnore
 	private Role role;
 
 	@Column(name = "userProfile", length = 128)

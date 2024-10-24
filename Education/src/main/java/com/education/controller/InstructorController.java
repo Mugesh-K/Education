@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,6 @@ import com.education.entity.Instructor;
 import com.education.service.InstructorService;
 import com.education.utils.EntityDTOMapper;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 
 @RestController
@@ -39,7 +39,7 @@ public class InstructorController {
         InstructorDTO responseDTO = entityDtoMapper.toDTO(createdInstructor);
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
-
+	
     @GetMapping("/getAll")
     public ResponseEntity<List<InstructorDTO>> getAllInstructors() {
         List<Instructor> instructors = service.getAll();
